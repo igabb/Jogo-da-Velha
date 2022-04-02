@@ -49,14 +49,16 @@ function checarEmpate() {
     let x = 0;
     let o = 0;
 
-    for (index in celula) {
-        if(!isNaN(index))
-        if (celula[index].classList.contains(JOGADOR_X)) {
-            x++;
+    for (index in celulas) {
+        if(!isNaN(index)) {            
+            if (celulas[index].classList.contains(JOGADOR_X)) {
+                x++;
+            }
+    
+            if (celulas[index].classList.contains(JOGADOR_O)) {
+                o++;
+            }
         }
-
-        if (celula[index].classList.contains(JOGADOR_O)) {
-            o++;
     }
 
     return x + o === 9 ? true : false;
