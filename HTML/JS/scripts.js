@@ -25,7 +25,7 @@ function jogar(id) {
     const celula = document.getElementById(id);
     turno = checarTurno ? JOGADOR_X : JOGADOR_O;
     celula.textContent = turno;
-    celula.classList.add(turno);    
+    celula.classList.add(turno);
     checarVencedor(turno);
 }
 
@@ -50,11 +50,11 @@ function checarEmpate() {
     let o = 0;
 
     for (index in celulas) {
-        if(!isNaN(index)) {            
+        if (!isNaN(index)) {
             if (celulas[index].classList.contains(JOGADOR_X)) {
                 x++;
             }
-    
+
             if (celulas[index].classList.contains(JOGADOR_O)) {
                 o++;
             }
@@ -65,9 +65,25 @@ function checarEmpate() {
 }
 
 function encerrarJogo(vencedor = null) {
+    const telaEscura = document.getElementById("tela-escura");
+    const h2 = document.createElement("h2")
+    const h3 = document.createElement("h3")
+    let mensagem = null;
+
+    telaEscura.style.display = "block";
+    telaEscura.appendChild(h2);
+    telaEscura.appendChild(h3);
+
     if (vencedor) {
-        console.log("Vencedor: " + vencedor);
+        h2.innerHTML = `O player <span>${vencedor}</span> venceu!`;
     } else {
-        console.log ("Empatou")
+        h2.innerHTML = "Empatou!";
     }
+
+    let contador = 3;
+    setInterval(() => {
+        h3.innerHTML = `Reiniciando em ${contador--}`;
+    }, 1000);
+
+    setTimeout(() => location.reload(), 4000);
 }
