@@ -5,7 +5,7 @@ body {
 }
 
 h2 {
-    margin: -5px;
+    margin: 5px;
     text-align: center;
     color: ghostwhite;
 }
@@ -13,7 +13,7 @@ h2 {
 .container {
     margin: 0 auto;
     max-width: 240px;
-    padding: 20;
+    padding: 10;
     border-radius: 10px;
     background-color: rgb(47, 118, 232);
     border: 3px solid black;

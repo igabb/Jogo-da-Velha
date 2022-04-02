@@ -15,5 +15,9 @@ function jogar(id) {
     turno = checarTurno ? JOGADOR_X : JOGADOR_O;
     celula.textContent = turno;
     checarTurno = !checarTurno;
+    checarVencedor(turno);
 }
 
+function checarVencedor() {
+
+}
