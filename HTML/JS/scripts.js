@@ -1,7 +1,19 @@
 const celulas = document.querySelectorAll(".celula");
+let checarTurno = true;
+
 const JOGADOR_X = "X";
 const JOGADOR_O = "O";
 
 document.addEventListener("click", (event) => {
-    console.log(event.target.id);
+    if (event.target.matches(".celula")) {
+        jogar(event.target.id);
+    }
 })
+
+function jogar(id) {
+    const celula = document.getElementById(id);
+    turno = checarTurno ? JOGADOR_X : JOGADOR_O;
+    celula.textContent = turno;
+    checarTurno = !checarTurno;
+}
+
